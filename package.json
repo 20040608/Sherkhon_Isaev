@@ -1,0 +1,26 @@
+{
+  "name": "sherkhon-portfolio",
+  "version": "1.0.0",
+  "description": "Sherkhon Isaev portfolio with Node SMTP contact API",
+  "main": "server.js",
+  "scripts": {
+    "local": "node scripts/start-local.js",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "smtp",
+    "contact-form"
+  ],
+  "author": "Sherkhon Isaev",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemailer": "^6.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

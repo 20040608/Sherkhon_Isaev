@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: sherkhon-portfolio
+    env: node
+    plan: free
+    autoDeploy: true
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
