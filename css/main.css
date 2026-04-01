@@ -161,31 +161,18 @@ article {
 
 .sidebar-info.is-collapsible {
   cursor: pointer;
-  padding-right: 36px;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.sidebar-info.is-collapsible::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 6px;
-  width: 11px;
-  height: 11px;
-  border-right: 2px solid var(--accent);
-  border-bottom: 2px solid var(--accent);
-  transform: translateY(-70%) rotate(45deg);
-  transition: transform var(--ease-main), opacity var(--ease-main);
-  opacity: 0.86;
+.sidebar-info.is-collapsible:focus,
+.sidebar-info.is-collapsible:focus-visible,
+.sidebar-info.is-collapsible:active {
+  outline: none;
+  background: transparent;
 }
 
-.sidebar.active .sidebar-info.is-collapsible::after {
-  transform: translateY(-30%) rotate(225deg);
-}
-
-.sidebar-info.is-collapsible:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 6px;
-  border-radius: 18px;
+.sidebar-info.is-collapsible * {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .avatar-box {

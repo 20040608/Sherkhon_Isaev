@@ -13,7 +13,7 @@ const MOBILE_SIDEBAR_QUERY = '(max-width: 1023px)';
 
 const RESUME_DATA = {
   name: 'Sherkhon Isaev',
-  role: 'Frontend Developer',
+  role: 'Programmer',
   contacts: {
     email: 'isayevsh04@gmail.com',
     phone: '+998 93 129 3548',
@@ -22,7 +22,7 @@ const RESUME_DATA = {
     githubUrl: 'https://github.com/20040608',
   },
   summary:
-    'Frontend Developer with practical experience building responsive interfaces and interaction-focused web pages. Strong foundation in HTML, CSS, JavaScript, and basic TypeScript with emphasis on maintainable structure and clear UX behavior.',
+    'Programmer with practical experience building responsive interfaces and interaction-focused web pages. Strong foundation in HTML, CSS, JavaScript, and basic TypeScript with emphasis on maintainable structure and clear UX behavior.',
   achievements: [
     'Maintained an active GitHub portfolio with 60+ public repositories demonstrating steady frontend practice.',
     'Implemented a recruiter-focused personal site with live GitHub project integration and reusable UI sections.',
