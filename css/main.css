@@ -159,6 +159,35 @@ article {
   gap: 14px;
 }
 
+.sidebar-info.is-collapsible {
+  cursor: pointer;
+  padding-right: 36px;
+}
+
+.sidebar-info.is-collapsible::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  width: 11px;
+  height: 11px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform var(--ease-main), opacity var(--ease-main);
+  opacity: 0.86;
+}
+
+.sidebar.active .sidebar-info.is-collapsible::after {
+  transform: translateY(-30%) rotate(225deg);
+}
+
+.sidebar-info.is-collapsible:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+  border-radius: 18px;
+}
+
 .avatar-box {
   width: 90px;
   aspect-ratio: 1;
@@ -201,27 +230,7 @@ article {
 }
 
 .info-more-btn {
-  position: absolute;
-  right: -4px;
-  top: -6px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--line-soft);
-  background: rgba(4, 11, 20, 0.8);
-  color: var(--accent);
-}
-
-.info-more-btn span {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.sidebar.active .info-more-btn ion-icon {
-  transform: rotate(180deg);
+  display: none;
 }
 
 .separator {

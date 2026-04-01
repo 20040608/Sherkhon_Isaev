@@ -13,7 +13,7 @@
 
   <main>
     <aside class="sidebar" data-sidebar>
-      <div class="sidebar-info">
+      <div class="sidebar-info" data-sidebar-toggle aria-controls="sidebar-contacts">
         <figure class="avatar-box">
           <img src="./images/sherkhon.png" alt="Sherkhon Isaev avatar" width="120" height="120" data-github-avatar data-fallback-src="./images/sherkhon.png">
         </figure>
@@ -23,13 +23,13 @@
           <p class="title">Frontend Developer</p>
         </div>
 
-        <button class="info-more-btn" type="button" data-sidebar-btn aria-expanded="false">
+        <button class="info-more-btn" type="button" data-sidebar-btn aria-expanded="false" aria-controls="sidebar-contacts">
           <span>Show Contacts</span>
           <ion-icon name="chevron-down"></ion-icon>
         </button>
       </div>
 
-      <div class="sidebar-info-more">
+      <div class="sidebar-info-more" id="sidebar-contacts">
         <div class="separator"></div>
 
         <ul class="contacts-list">

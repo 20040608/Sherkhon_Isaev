@@ -9,6 +9,7 @@ const PORTFOLIO_CONFIG = {
 const CACHE_KEY = `portfolio:${PORTFOLIO_CONFIG.username}:repos:v1`;
 const PROFILE_CACHE_KEY = `portfolio:${PORTFOLIO_CONFIG.username}:profile:v1`;
 const TASHKENT_TIMEZONE = 'Asia/Tashkent';
+const MOBILE_SIDEBAR_QUERY = '(max-width: 1023px)';
 
 const RESUME_DATA = {
   name: 'Sherkhon Isaev',
@@ -231,21 +232,70 @@ const setRuntimeHints = () => {
 
 const setSidebarToggle = () => {
   const sidebar = qs('[data-sidebar]');
+  const toggleArea = qs('[data-sidebar-toggle]');
   const toggleBtn = qs('[data-sidebar-btn]');
+  const mobileSidebar = window.matchMedia(MOBILE_SIDEBAR_QUERY);
 
-  if (!sidebar || !toggleBtn) {
+  if (!sidebar || !toggleArea || !toggleBtn) {
     return;
   }
 
-  toggleBtn.addEventListener('click', () => {
-    const isActive = sidebar.classList.toggle('active');
-    toggleBtn.setAttribute('aria-expanded', String(isActive));
+  const setExpandedState = (isExpanded) => {
+    toggleBtn.setAttribute('aria-expanded', String(isExpanded));
+    toggleArea.setAttribute('aria-expanded', String(isExpanded));
+  };
 
-    const label = toggleBtn.querySelector('span');
-    if (label) {
-      label.textContent = isActive ? 'Hide Contacts' : 'Show Contacts';
+  const syncToggleState = () => {
+    if (mobileSidebar.matches) {
+      toggleArea.classList.add('is-collapsible');
+      toggleArea.setAttribute('role', 'button');
+      toggleArea.setAttribute('tabindex', '0');
+      setExpandedState(sidebar.classList.contains('active'));
+      return;
     }
+
+    sidebar.classList.remove('active');
+    toggleArea.classList.remove('is-collapsible');
+    toggleArea.removeAttribute('role');
+    toggleArea.removeAttribute('tabindex');
+    toggleArea.removeAttribute('aria-expanded');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+  };
+
+  const toggleSidebar = () => {
+    if (!mobileSidebar.matches) {
+      return;
+    }
+
+    const isActive = sidebar.classList.toggle('active');
+    setExpandedState(isActive);
+  };
+
+  toggleArea.addEventListener('click', (event) => {
+    if (event.target.closest('a')) {
+      return;
+    }
+
+    toggleSidebar();
   });
+
+  toggleArea.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') {
+      return;
+    }
+
+    event.preventDefault();
+    toggleSidebar();
+  });
+
+  toggleBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    toggleSidebar();
+  });
+
+  syncToggleState();
+  mobileSidebar.addEventListener('change', syncToggleState);
 };
 
 const setPageNavigation = () => {
