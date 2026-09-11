@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Synthetic Time Governance — Independent Attestation for Production AI Agents</title>
+<meta name="description" content="A customer-owned governance layer for production AI agents: isolated verifier services, exact action binding, signed evidence, and provider-specific rejection without replacing your existing agent framework.">
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111;background:#f4f3ef}
+*{box-sizing:border-box}body{margin:0}main{max-width:1080px;margin:auto;padding:64px 24px 96px}.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,82px);line-height:.96;letter-spacing:-.055em;max-width:980px;margin:20px 0}.lead{font-size:22px;line-height:1.5;max-width:780px;color:#353535}
+.card{background:#fff;border:1px solid #d8d7d1;border-radius:20px;padding:28px;margin-top:24px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+h2{font-size:30px;letter-spacing:-.03em;margin:0 0 14px}h3{font-size:18px;margin:0 0 8px}p,li{line-height:1.6;color:#333}.quote{font-size:26px;line-height:1.35;font-weight:650}
+.price{font-size:48px;font-weight:750;letter-spacing:-.05em;margin:8px 0}.muted{color:#666}.cta{display:inline-block;background:#111;color:#fff;text-decoration:none;border-radius:999px;padding:14px 20px;font-weight:650}
+code{background:#efeee9;padding:2px 6px;border-radius:6px}@media(max-width:760px){.grid{grid-template-columns:1fr}main{padding-top:40px}}
+</style>
+</head>
+<body><main>
+<div class="eyebrow">Synthetic Time Governance</div>
+<h1>Independent attestation for production AI agent actions.</h1>
+<p class="lead">Keep your existing agent stack. Add an isolated control plane that can reject actions and evidence the agent runtime cannot self-approve.</p>
+
+<div class="card">
+<p class="quote">“Temporal makes execution durable. Synthetic Time makes supported agent actions independently attestable and financially accountable.”</p>
+<p class="muted">This is not a replacement for Temporal, LangGraph, OpenAI Agents SDK, or your custom workers.</p>
+</div>
+
+<div class="grid">
+<section class="card"><h2>The trust boundary</h2>
+<p>The agent runtime requests an action. The verifier runs as a separate service with a separate database principal, provider credential and signing key. The runtime cannot mint a valid verifier receipt for itself.</p>
+<p>Supported side effects bind the exact canonical action, idempotency key and provider receipt. Invalid or inconsistent evidence is rejected instead of being promoted to business truth.</p></section>
+<section class="card"><h2>What is deliberately excluded</h2>
+<ul><li>No autonomous mission controller.</li><li>No self-improvement service.</li><li>No autonomous code deployment.</li><li>No browser worker or local desktop agent.</li></ul>
+<p>The customer-facing profile is the governance subset, not the autonomous Synthetic Time system.</p></section>
+</div>
+
+<div class="grid">
+<section class="card"><h3>Customer-owned deployment</h3><p>Your cloud account, your database, your secrets. The delivered system keeps operating without my account or a seller-hosted dependency.</p></section>
+<section class="card"><h3>Security review</h3><p>Read-only source review can be provided under NDA. The production service allowlist and trust boundaries are documented before deployment.</p></section>
+<section class="card"><h3>Framework integration</h3><p>A reference OpenAI Agents SDK integration routes a real tool action through the isolated Provider Verifier while leaving the agent loop in place.</p></section>
+<section class="card"><h3>Evidence, not compliance theater</h3><p>The system produces bounded technical evidence for your security/compliance process. No certification or legal-compliance claim is sold.</p></section>
+</div>
+
+<section class="card">
+<div class="eyebrow">Fixed production pilot</div>
+<div class="price">$15,000</div>
+<p>One customer-owned deployment · one production agent workflow · up to three governed tool/integration paths · one model provider · two scoped revisions · security handoff/runbook · 30 days bug/security support.</p>
+<p><strong>Optional ongoing support:</strong> $5,000/year for maintenance and evidence-format updates. New workflows and features are separately scoped.</p>
+<a class="cta" href="mailto:work@sherkhon.uz?subject=Synthetic%20Time%20Governance%20Pilot">Discuss a production workflow</a>
+</section>
+
+<section class="card">
+<h2>Why the verifier exists</h2>
+<p>In Synthetic Time's own production history, provider responses were rejected when their payload digest did not match the verifier's canonical contract. The system did not convert unverifiable responses into accepted evidence. That failure mode is intentional: unsupported truth stays untrusted.</p>
+<p class="muted">Private source repository. Technical review available under NDA for qualified buyers.</p>
+</section>
+</main></body></html>
