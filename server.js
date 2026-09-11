@@ -254,6 +254,10 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
+app.get('/governance', (_req, res) => {
+  res.sendFile(path.join(ROOT_DIR, 'governance.html'));
+});
+
 app.get('*', (req, res) => {
   if (req.path.startsWith('/api/')) {
     res.status(404).json({ success: false, message: 'API route not found.' });
